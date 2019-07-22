@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>List of Users</h2>
+<table>
+    <thead><th>Name</th><th>Mobile</th><th>Email</th><th>Code</th><th>Vendor</th><th>Country</th><th>Warranty</th></thead>
+    {{range . }}
+        <tr>
+            <td>{{.Name}}</td>
+            <td>{{.Mobile}}</td>
+            <td>{{.Email}}</td>
+            <td>{{.Code}}</td>
+            <td>{{.Vendor}}</td>
+            <td>{{.Country}}</td>
+            <td>{{.Warranty}}</td>
+            <td><a href="/edit/{{.Id}}">Edit </a>|
+                <a href="/delete/{{.Email}}">Delete</a>
+        </tr>
+    {{end}}
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<table>
+    <thead><tr><th>Name</th><td>{{.Name}}</td><td><a href="/edit/{{.Id}}">Edit </a></td></tr>
+    <thead><tr><th>Mobile</th><td>{{.Mobile}}</td><td><a href="/edit/{{.Id}}">Edit </a></td></tr>
+    <thead><tr><th>Email</th><td>{{.Email}}</td><td><a href="/edit/{{.Id}}">Edit </a></td></tr>
+    <thead><tr><th>Password</th><td>{{.Password}}</td><td><a href="/edit/{{.Id}}">Edit </a></td></tr>
+</table>
+<table>
+    <thead><th>Code</th><th>Vendor</th><th>Country</th><th>Warranty</th></thead>
+    {{range . }}
+        <tr>
+            <td>{{.Code}}</td>
+            <td>{{.Vendor}}</td>
+            <td>{{.Country}}</td>
+            <td>{{.Warranty}}</td>
+            <td><a href="/edit/{{.Id}}">Edit </a>|
+                <a href="/delete/{{.Email}}">Delete</a>
+        </tr>
+    {{end}}
+</table>
+</body>
+</html>

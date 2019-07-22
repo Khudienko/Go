@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<p><b>User:</b>> </p>
+<p><a href="/login">login</a> | <a href="/registration">registration</a><br></p>
+
+<h2>List of power tools</h2>
+<p>New power tool <a href="/create">Add</a></p>
+<p>Add power tool using file
+    <form enctype="multipart/form-data" method="post">
+    <input type="file" accept="text/xml,text/csv">
+    <input type="submit" value="Send"></form>
+<p></p>
+<table>
+    <thead><th>Id</th><th>Code(item)</th><th>Vendor</th><th>Country (of made)</th><th>Warranty (months)</th></thead>
+    {{range . }}
+        <tr>
+            <td>{{.Id}}</td>
+            <td>{{.Code}}</td>
+            <td>{{.Vendor}}</td>
+            <td>{{.Country}}</td>
+            <td>{{.Warranty}}</td>
+            <td><a href="/edit/{{.Id}}">Edit </a>|
+                <a href="/delete/{{.Id}}">Delete</a>
+        </tr>
+    {{end}}
+</table>
+
+
+</body>
+</html>
